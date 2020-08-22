@@ -53,6 +53,7 @@ fun main() {
             }
     )
 
+
     // comparable
 //    Collections.sort(personalList,)
 
