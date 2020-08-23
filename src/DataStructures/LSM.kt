@@ -41,6 +41,8 @@ fun main() {
     // 本質為Java的LinkedHashSet
     val set11: MutableSet<Int> = mutableSetOf()
     val set22: Set<Int> = mutableSetOf(2, 1, 3)
+    val set33: HashSet<Int> = hashSetOf(2, 1, 3)
+
 
     // 本質為Java的LinkedHashMap
     val map11: MutableMap<String, Int> = mutableMapOf()
@@ -50,6 +52,19 @@ fun main() {
     map11.clear()
     val map22: Map<String, Int> =
             mutableMapOf("Anna" to 10, "Bonnie" to 20, "Cynthia" to 30)
+
+
+
+    //HashMap : mutable, read and write both, no fixed size
+    var myMap = HashMap<Int,String>()
+    myMap.put(4,"A")
+    myMap.put(5,"B")
+    myMap.put(6,"C")
+
+    myMap.replace(7,"D")
+    myMap.put(4,"A")
+
+
 
 
     //走訪元素
@@ -88,6 +103,5 @@ fun main() {
     for (entry in boys3) {
         println("${entry.key}: ${entry.value}")
     }
-
 
 }
