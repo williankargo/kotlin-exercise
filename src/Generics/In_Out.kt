@@ -14,6 +14,7 @@ interface Consumer<in T> {
 
 // invariant
 interface ProductionConsumer<T> {
+
     fun produce(): T
     fun consume(item: T)
 }
@@ -53,7 +54,7 @@ fun testWrite(here: Production<Burger>) {}
 //Production test
 val production1: Production<Food> = FoodStore() //Production<Food>
 val production2: Production<Food> = FastFoodStore()  //Production<FastFood>
-val production3: Production<Food> = InOutBurger()  //Production<Burger>
+val production3: Production<Food> = InOutBurger()  //Production<Burger>  //todo
 //val production4: Production<Burger> = FoodStore() //Production<Food> error
 
 
@@ -104,14 +105,21 @@ fun main() {
     //out:
     //testWrite(production3)  不能被寫入fun
     print(production3.produce())  //可以讀取
-    //print(production3.name) 不能讀interface額外的參數
+    //print(production3.number)    // 因為這裡的production3是指定比較高層級的，所以不是原來的 InOutBurger ，所以不能讀取number
+
+    // number
+    val production33 = InOutBurger()  //Production<Burger>
+    val demo2 = production33  //todo
+    print(demo2.number)
 
     //in:
     testWrite2(consumer3)  //可以被寫入fun
     //print(consumer3.consume()) 不能讀取
 
-    //normal case
+    // normal case
+    // number
     val normalCase = Peter()
+    val demo = normalCase
     print(normalCase.number)
 }
 

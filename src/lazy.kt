@@ -16,7 +16,7 @@ fun main() {
 }
 
 
-// ‘lazy initialization’ was designed to prevent unnecessary initialization of objects.
+// lazy initialization’ was designed to prevent unnecessary initialization of objects.
 // You variables will not be initialised unless you use it in your code
 // It is initialized only once. Next time when you use it, you get the value from cache memory.
 
